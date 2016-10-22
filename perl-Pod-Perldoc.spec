@@ -4,14 +4,16 @@
 
 Name:           %{?scl_prefix}perl-Pod-Perldoc
 # let's overwrite the module from perl.srpm
-Version:        3.25
-Release:        367%{?dist}
+Version:        3.26
+Release:        1%{?dist}
 Summary:        Look up Perl documentation in Pod format
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/Pod-Perldoc/
 Source0:        http://www.cpan.org/authors/id/M/MA/MALLEN/Pod-Perldoc-%{version}.tar.gz
 BuildArch:      noarch
+BuildRequires:  findutils
+BuildRequires:  make
 BuildRequires:  %{?scl_prefix}perl
 BuildRequires:  %{?scl_prefix}perl-generators
 BuildRequires:  %{?scl_prefix}perl(ExtUtils::MakeMaker)
@@ -108,7 +110,7 @@ the perl library modules.
 
 %install
 %{?scl:scl enable %{scl} '}make pure_install DESTDIR=$RPM_BUILD_ROOT%{?scl:'}
-find $RPM_BUILD_ROOT -type f -name .packlist -exec rm -f {} \;
+find $RPM_BUILD_ROOT -type f -name .packlist -delete
 %{_fixperms} $RPM_BUILD_ROOT/*
 
 %check
@@ -122,6 +124,9 @@ find $RPM_BUILD_ROOT -type f -name .packlist -exec rm -f {} \;
 %{_mandir}/man3/*
 
 %changelog
+* Fri Jul 29 2016 Petr Pisar <ppisar@redhat.com> - 3.26-1
+- 3.26 bump
+
 * Mon Jul 11 2016 Petr Pisar <ppisar@redhat.com> - 3.25-367
 - SCL
 
