@@ -32,7 +32,7 @@ diff --git a/lib/Pod/Perldoc.pm b/lib/Pod/Perldoc.pm
 index cd52aa2..b54cc23 100644
 --- a/lib/Pod/Perldoc.pm
 +++ b/lib/Pod/Perldoc.pm
-@@ -1153,6 +1153,20 @@ sub search_perlvar {
+@@ -1148,6 +1148,20 @@ sub search_perlvar {
  
  #..........................................................................
  
@@ -53,7 +53,7 @@ index cd52aa2..b54cc23 100644
  sub search_perlop {
    my ($self,$found_things,$pod) = @_;
  
-@@ -1166,60 +1180,92 @@ sub search_perlop {
+@@ -1161,60 +1175,92 @@ sub search_perlop {
  
    my $thing = $self->opt_f;
  

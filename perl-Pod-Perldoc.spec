@@ -10,7 +10,7 @@
 Name:           %{?scl_prefix}perl-Pod-Perldoc
 # let's overwrite the module from perl.srpm
 Version:        3.28.01
-Release:        451%{?dist}
+Release:        452%{?dist}
 Summary:        Look up Perl documentation in Pod format
 License:        GPL+ or Artistic
 URL:            https://metacpan.org/release/Pod-Perldoc
@@ -121,6 +121,9 @@ the Perl library modules.
 %{_mandir}/man3/*
 
 %changelog
+* Tue Jan 14 2020 Jitka Plesnikova <jplesnik@redhat.com> - 3.28.01-452
+- Updated to prevent patch leftover
+
 * Thu Jan 02 2020 Jitka Plesnikova <jplesnik@redhat.com> - 3.28.01-451
 - SCL
 
